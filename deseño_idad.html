@@ -1,61 +1,46 @@
-Sí, por supuesto. Aquí te dejo un ejemplo de cómo podrías crear la tabla utilizando HTML y CSS:
+Sí, se puede crear una tabla en un solo cajón. Aquí te dejo un ejemplo de cómo podrías hacerlo:
 
 HTML:
 ```
-<table>
-  <thead>
-    <tr>
-      <th colspan="2">Competencias de la asignatura</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Aplica herramientas computacionales actuales y emergentes para optimizar los procesos en las organizaciones.</td>
-      <td rowspan="5">El programa de la asignatura de Administración de servidores, está diseñado para contribuir en la formación integral de los estudiantes, les habilita en las competencias planear, diseñar y aplicar la gestión de servidores en el entorno de redes, de acuerdo a las necesidades de la organización, utilizando las tecnologías idóneas para el correcto funcionamiento de los servicios.</td>
-    </tr>
-    <tr>
-      <td>Crea y administra redes de computadoras, considerando el diseño, selección, instalación y mantenimiento para la operación eficiente de los recursos informáticos.</td>
-    </tr>
-    <tr>
-      <td>Realiza consultorías relacionadas con la función informática para la mejora continua de la organización.</td>
-    </tr>
-    <tr>
-      <td>Se desempeña profesionalmente con ética, respetando el marco legal, la pluralidad y la conservación del medio ambiente.</td>
-    </tr>
-    <tr>
-      <td>Participa y dirige grupos de trabajo interdisciplinarios, para el desarrollo de proyectos que requieran soluciones innovadoras basadas en tecnologías y sistemas de información.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="tabla">
+  <h2>Competencias de la asignatura</h2>
+  <ul>
+    <li>Aplica herramientas computacionales actuales y emergentes para optimizar los procesos en las organizaciones.</li>
+    <li>Crea y administra redes de computadoras, considerando el diseño, selección, instalación y mantenimiento para la operación eficiente de los recursos informáticos.</li>
+    <li>Realiza consultorías relacionadas con la función informática para la mejora continua de la organización.</li>
+    <li>Se desempeña profesionalmente con ética, respetando el marco legal, la pluralidad y la conservación del medio ambiente.</li>
+    <li>Participa y dirige grupos de trabajo interdisciplinarios, para el desarrollo de proyectos que requieran soluciones innovadoras basadas en tecnologías y sistemas de información.</li>
+  </ul>
+  <p>El programa de la asignatura de Administración de servidores, está diseñado para contribuir en la formación integral de los estudiantes, les habilita en las competencias planear, diseñar y aplicar la gestión de servidores en el entorno de redes, de acuerdo a las necesidades de la organización, utilizando las tecnologías idóneas para el correcto funcionamiento de los servicios.</p>
+</div>
 ```
 
 CSS:
 ```
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-thead th {
-  background-color: lightgray;
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 10px;
-}
-
-tbody td {
-  padding: 10px;
+.tabla {
   border: 1px solid black;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-tbody td:first-child {
-  width: 50%;
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-tbody td:last-child {
-  font-weight: bold;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 5px 0;
+}
+
+p {
+  margin-top: 10px;
 }
 ```
-
-En esta tabla se utilizó el atributo `colspan` en la celda del encabezado para que se extendiera por dos columnas y el atributo `rowspan` en una de las celdas de la columna de la izquierda para que se extendiera por cinco filas. Esto permite un diseño más claro y resumido.
+En este ejemplo, se utilizó un div con la clase "tabla" para contener todo el contenido. Dentro de este div se colocó un encabezado h2 con el texto "Competencias de la asignatura", una lista ul con los puntos que se quieren mostrar y un párrafo p con la información adicional. Luego, se aplicaron estilos CSS para darle formato y estilo a la tabla.
