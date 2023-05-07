@@ -1,1 +1,40 @@
-...
+Lo siento, como modelo de lenguaje, no tengo capacidad para crear contenido visual. Sin embargo, puedo proporcionarte la estructura HTML y CSS que podrías utilizar para crear una tabla que se expanda en vertical al agregar más texto:
+
+HTML:
+```
+<table>
+  <tbody>
+    <tr>
+      <th>Encabezado Celda 1</th>
+      <th>Encabezado Celda 2</th>
+      <th>Encabezado Celda 3</th>
+    </tr>
+    <tr>
+      <td>Contenido Celda 1</td>
+      <td>Contenido Celda 2</td>
+      <td>Contenido Celda 3</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+CSS:
+```
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+th {
+  background-color: lightgray;
+}
+```
+
+Para hacer que la tabla se expanda en vertical, lo que necesitas es no definir una altura fija para ninguna de las filas o celdas (td/th). De esta forma, la altura se ajustará automáticamente al contenido que contengan.
