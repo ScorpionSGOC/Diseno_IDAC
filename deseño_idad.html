@@ -1,39 +1,46 @@
-Claro, puedo ayudarte con eso. A continuación se presenta un ejemplo de cómo conectar a una base de datos MariaDB utilizando PHP y la extensión `mysqli`:
+Sí, se puede crear una tabla en un solo cajón. Aquí te dejo un ejemplo de cómo podrías hacerlo:
 
-1. Primero, crea un archivo PHP llamado `conexion.php`:
-
-```php
-<?php
-
-// Configuración de la conexión a la base de datos
-$servername = "localhost"; // El servidor de la base de datos (IP o nombre del dominio)
-$username = "nombre_usuario"; // Tu nombre de usuario de la base de datos
-$password = "tu_contraseña"; // La contraseña de la base de datos para el usuario seleccionado
-$dbname = "nombre_base_datos"; // El nombre de la base de datos a la que deseas conectarte
-
-// Crear una conexión con MariaDB
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica si la conexión fue exitosa
-if ($conn->connect_error) {
-    die("Error en la conexión: " . $conn->connect_error);
-} else {
-    echo "Conexión exitosa a la base de datos MariaDB!";
-}
-
-// Cierra la conexión al terminar
-$conn->close();
-
-?>
+HTML:
+```
+<div class="tabla">
+  <h2>Competencias de la asignatura</h2>
+  <ul>
+    <li>Aplica herramientas computacionales actuales y emergentes para optimizar los procesos en las organizaciones.</li>
+    <li>Crea y administra redes de computadoras, considerando el diseño, selección, instalación y mantenimiento para la operación eficiente de los recursos informáticos.</li>
+    <li>Realiza consultorías relacionadas con la función informática para la mejora continua de la organización.</li>
+    <li>Se desempeña profesionalmente con ética, respetando el marco legal, la pluralidad y la conservación del medio ambiente.</li>
+    <li>Participa y dirige grupos de trabajo interdisciplinarios, para el desarrollo de proyectos que requieran soluciones innovadoras basadas en tecnologías y sistemas de información.</li>
+  </ul>
+  <p>El programa de la asignatura de Administración de servidores, está diseñado para contribuir en la formación integral de los estudiantes, les habilita en las competencias planear, diseñar y aplicar la gestión de servidores en el entorno de redes, de acuerdo a las necesidades de la organización, utilizando las tecnologías idóneas para el correcto funcionamiento de los servicios.</p>
+</div>
 ```
 
-2. Asegúrate de reemplazar los siguientes valores con los de tu instancia de MariaDB:
+CSS:
+```
+.tabla {
+  border: 1px solid black;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
 
-  - `$servername`: La dirección IP o nombre del dominio de tu servidor MariaDB.
-  - `$username`: Tu nombre de usuario para acceder a la base de datos.
-  - `$password`: La contraseña para el usuario seleccionado.
-  - `$dbname`: El nombre de la base de datos a la que deseas conectarte.
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
 
-3. Guarda este archivo en tu servidor y accede a él a través de un navegador web. Si todo está configurado correctamente, verás un mensaje que indica "Conexión exitosa a la base de datos MariaDB!".
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-Nota: Si aún no tienes la extensión `mysqli` instalada en tu servidor, puede que necesites instalarla antes de utilizar este código.
+li {
+  padding: 5px 0;
+}
+
+p {
+  margin-top: 10px;
+}
+```
+En este ejemplo, se utilizó un div con la clase "tabla" para contener todo el contenido. Dentro de este div se colocó un encabezado h2 con el texto "Competencias de la asignatura", una lista ul con los puntos que se quieren mostrar y un párrafo p con la información adicional. Luego, se aplicaron estilos CSS para darle formato y estilo a la tabla.
