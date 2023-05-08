@@ -1,1 +1,34 @@
-f
+Aquí te dejo un ejemplo de cómo crear 4 cajones utilizando Flexbox en HTML con un margen de 80%:
+
+
+```
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10%;
+}
+
+.cajon {
+  width: 20%;
+  height: 100px;
+  background-color: #ccc;
+}
+```
+```
+<div class="contenedor">
+  <div class="cajon"></div>
+  <div class="cajon"></div>
+  <div class="cajon"></div>
+  <div class="cajon"></div>
+</div>
+```
+
+
+
+En este ejemplo, el contenedor tiene un `margin` de `0 10%` para que tenga un margen izquierdo y derecho del 10% de su contenedor padre.
+
+Los elementos cajones tienen un ancho del `20%` cada uno, lo que hace un total del `80%` (4 cajones x 20% de ancho). Además tienen un alto fijo de `100px` y un color de fondo de `#ccc`.
+
+La propiedad `justify-content: space-between` se utiliza para distribuir los elementos equitativamente dentro del contenedor, dejando un espacio uniforme entre cada cajón. Si prefieres que los elementos estén centrados, puedes cambiar `space-between` por `center`.
+
+Puedes ajustar estas propiedades según tus necesidades para crear el diseño que estás buscando.
