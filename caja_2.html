@@ -1,61 +1,91 @@
-<div class="container">
-		<tr>
-			<th>Caracterizacion de la asignatura</th>
-		</tr>
-		<div class="box">
-			<div class="tabla">
-				
-				<ul>
-					<li>
-					<?php
-					include("./conexion.php");
+Puedes mejorar la inserción de datos en las tablas y hacerlo más fácil utilizando funciones de PHP y separando el código en diferentes archivos. Primero, crea un archivo llamado `functions.php` y escribe las funciones como las que se muestran a continuación:
 
-					// Mostrar los resultados de la consulta
-					while ($fila = mysqli_fetch_assoc($resultado)) {
+```php
+// functions.php
 
-						echo "" . $fila['caract_asignatura'] . "";
-					}
-					// Liberar memoria después de usar el resultado
-					mysqli_free_result($resultado);
+function abrirConexion() {
+    include("./conexion.php");
+    return $conexion;
+}
 
-					// Cerrar la conexión a la base de datos
+function cerrarConexion($conexion) {
+    mysqli_close($conexion);
+}
 
+function obtenerCaracterizacionAsignatura() {
+    $conexion = abrirConexion();
+    $query = "tu_consulta_para_caracterizacion_asignatura";
+    $resultado = mysqli_query($conexion, $query);
 
-					?>
-					</li>
-				</ul>
+    $row = [];
+    while ($fila = mysqli_fetch_assoc($resultado)) {
+        $row[] = $fila['caract_asignatura'];
+    }
+    mysqli_free_result($resultado);
+    cerrarConexion($conexion);
 
-			</div>
-		</div>
-		
-		<tr>
-			<th class="text">Intencion didactica</th>
-		</tr>
-		<div class="box">
-			<div class="tabla">
-				<tr>
-					<th>Características de la asignatura</th>
-				</tr>
-				<ul>
-					<li>
-					<?php
-		include("./conexion.php");
+    return $row;
+}
 
-		// Mostrar los resultados de la consulta
-		while ($fila = mysqli_fetch_assoc($resultado2)) {
+function obtenerIntencionDidactica() {
+    $conexion = abrirConexion();
+    $query = "tu_consulta_para_intension_didactica";
+    $resultado = mysqli_query($conexion, $query);
 
-			echo "" . $fila['intension_didactica'] . "";
-		}
-		// Liberar memoria después de usar el resultado
-		mysqli_free_result($resultado2);
+    $row = [];
+    while ($fila = mysqli_fetch_assoc($resultado)) {
+        $row[] = $fila['intension_didactica'];
+    }
+    mysqli_free_result($resultado);
+    cerrarConexion($conexion);
 
-		// Cerrar la conexión a la base de datos
+    return $row;
+}
+```
 
+Luego, en tu archivo HTML principal, simplemente usa las funciones creadas para obtener e imprimir los datos. Asegúrate de incluir `functions.php` al comienzo del archivo HTML. Aquí tienes un ejemplo:
 
-		?>
-					</li>
-				</ul>
+```php
+<?php
+include("./functions.php");
+$caracterizaciones = obtenerCaracterizacionAsignatura();
+$intenciones = obtenerIntencionDidactica();
+?>
+```
 
-			</div>
-		</div>
-	</div>
+Luego en el cuerpo del HTML:
+
+```html
+<div class="container"> 
+    <tr> 
+        <th>Caracterizacion de la asignatura</th> 
+    </tr> 
+    <div class="box"> 
+        <div class="tabla">     
+            <ul> 
+                <?php foreach ($caracterizaciones as $caract_asignatura): ?> 
+                <li><?php echo $caract_asignatura; ?></li> 
+                <?php endforeach; ?>
+            </ul>   
+        </div> 
+    </div> 
+
+    <tr> 
+        <th class="text">Intencion didactica</th> 
+    </tr> 
+    <div class="box"> 
+        <div class="tabla"> 
+            <tr> 
+                <th>Características de la asignatura</th> 
+            </tr> 
+            <ul> 
+                <?php foreach ($intenciones as $intension_didactica): ?> 
+                <li><?php echo $intension_didactica; ?></li> 
+                <?php endforeach; ?>
+            </ul>
+        </div> 
+    </div> 
+</div> 
+``` 
+
+Este enfoque ayuda a mantener el código HTML más limpio y facilita la inserción de datos en las tablas. Además, puedes reutilizar las funciones creadas en otros archivos si es necesario.
