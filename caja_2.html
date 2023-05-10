@@ -1,0 +1,61 @@
+<div class="container">
+		<tr>
+			<th>Caracterizacion de la asignatura</th>
+		</tr>
+		<div class="box">
+			<div class="tabla">
+				
+				<ul>
+					<li>
+					<?php
+					include("./conexion.php");
+
+					// Mostrar los resultados de la consulta
+					while ($fila = mysqli_fetch_assoc($resultado)) {
+
+						echo "" . $fila['caract_asignatura'] . "";
+					}
+					// Liberar memoria después de usar el resultado
+					mysqli_free_result($resultado);
+
+					// Cerrar la conexión a la base de datos
+
+
+					?>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		
+		<tr>
+			<th class="text">Intencion didactica</th>
+		</tr>
+		<div class="box">
+			<div class="tabla">
+				<tr>
+					<th>Características de la asignatura</th>
+				</tr>
+				<ul>
+					<li>
+					<?php
+		include("./conexion.php");
+
+		// Mostrar los resultados de la consulta
+		while ($fila = mysqli_fetch_assoc($resultado2)) {
+
+			echo "" . $fila['intension_didactica'] . "";
+		}
+		// Liberar memoria después de usar el resultado
+		mysqli_free_result($resultado2);
+
+		// Cerrar la conexión a la base de datos
+
+
+		?>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
