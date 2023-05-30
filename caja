@@ -1,9 +1,23 @@
-<table>
+<div class="indice_2">
+				<table>
 			<tbody>
-				
-					<p>Tecnologico Nacional de Mexico</p>
-					<p> Subdirector Academico o su equivalete en los Institutos Tecnologicos Descentralizados</p>
-					<p>Instrumentación didáctica para la formación y desarrollo de competencias Profesionales</p>
-				
-				</tbody>
-				</table>
+
+				<tr>
+					<p> Periodo: Agosto Diciembre<br>
+						Nombre de la asignatura: Administración de Servidores<br>
+						Plan de estudio:<br>
+					</p>
+		
+					<td> Nombre de la asignatura: Administración de Servidores</td><br>
+					<td>Plan de estudio:</td>
+					<td>IINF-2010-220 </td>
+					<td>Ingeniería informática.</td><br>
+					<td>Clave de asignatura: </td>
+					<td>IFH-1002</td><br>
+					<td>Horas teoría – horas prácticas – créditos:</td><?php foreach ($satca as $sat) : ?>
+					<td><?php echo $sat; ?></td><?php endforeach; ?><br>
+
+				</tr>
+			</tbody>
+			</table>
+		</div>
