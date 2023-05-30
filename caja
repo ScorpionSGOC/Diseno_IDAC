@@ -1,13 +1,9 @@
-En lugar de "lo que estoy haciendo", puedes utilizar "lo que se muestra en el código" o "el extracto de código que proporcioné". En cuanto al código en sí, podrías utilizar diferentes etiquetas HTML en lugar de "br" para dividir las filas y las columnas de la tabla. Por ejemplo, podrías utilizar la etiqueta "tr" para definir cada fila y la etiqueta "td" para definir cada celda en la fila. Aquí te muestro un ejemplo:
-
-```
 <table>
-  <tr>
-    <td>Tecnologico Nacional de Mexico</td>
-    <td>Subdirector Academico o su equivalete en los Institutos Tecnologicos Descentralizados</td>
-    <td>Instrumentación didáctica para la formación y desarrollo de competencias Profesionales</td>
-  </tr>
-</table>
-```
-
-Este código define una tabla con una fila que contiene tres celdas.
+			<tbody>
+				
+					<p>Tecnologico Nacional de Mexico</p>
+					<p> Subdirector Academico o su equivalete en los Institutos Tecnologicos Descentralizados</p>
+					<p>Instrumentación didáctica para la formación y desarrollo de competencias Profesionales</p>
+				
+				</tbody>
+				</table>
