@@ -1,23 +1,59 @@
-<div class="indice_2">
-				<table>
-			<tbody>
+Para centralizar el texto y mantenerlo estructurado, puedes utilizar un contenedor 'div' para envolver el contenido. También te recomendaría colocar correctamente las etiquetas dentro de la tabla, haciendo uso de las etiquetas 'tr' y 'td'. Aquí tienes una versión corregida del código:
 
-				<tr>
-					<p> Periodo: Agosto Diciembre<br>
-						Nombre de la asignatura: Administración de Servidores<br>
-						Plan de estudio:<br>
-					</p>
-		
-					<td> Nombre de la asignatura: Administración de Servidores</td><br>
-					<td>Plan de estudio:</td>
-					<td>IINF-2010-220 </td>
-					<td>Ingeniería informática.</td><br>
-					<td>Clave de asignatura: </td>
-					<td>IFH-1002</td><br>
-					<td>Horas teoría – horas prácticas – créditos:</td><?php foreach ($satca as $sat) : ?>
-					<td><?php echo $sat; ?></td><?php endforeach; ?><br>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <style>
+        .contenedor {
+            text-align: center;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="indice_2 contenedor">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <p> Periodo: Agosto Diciembre<br>
+                            Nombre de la asignatura: Administración de Servidores<br>
+                            Plan de estudio:<br>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Nombre de la asignatura: </td>
+                    <td> Administración de Servidores </td>
+                    <td> Plan de estudio: </td>
+                    <td> IINF-2010-220 </td>
+                </tr>
+                <tr>
+                    <td> Clave de asignatura: </td>
+                    <td> IFH-1002 </td>
+                    <td> Horas teoría – horas prácticas – créditos: </td>
+                    <td>
+                        <?php foreach ($satca as $sat) : ?>
+                            <?php echo $sat; ?>
+                        <?php endforeach; ?>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+```
 
-				</tr>
-			</tbody>
-			</table>
-		</div>
+En este ejemplo, he añadido el estilo necesario para centrar el texto y la tabla. Asegúrate de copiar todo el código e insertarlo en tu archivo HTML.
